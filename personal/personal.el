@@ -191,6 +191,21 @@
 (prelude-install-search-engine "fogbugz" "https://fogbugz.zuerchertech.com/default.asp?" "FogBugz: ")
 (define-key prelude-mode-map (kbd "C-c f") 'prelude-fogbugz)
 
+(setq-default
+ frame-title-format
+ '(("Emacs"))
+
+ header-line-format
+ '((:eval
+    (concat
+     (projectile-project-name)
+     " - "
+     (if (buffer-file-name)
+         (abbreviate-file-name (buffer-file-name))
+       "%b")))))
+(setq mode-line-misc-info
+      (assq-delete-all 'which-func-mode mode-line-misc-info))
+
 ;; Start server
 (require 'server)
 (unless (server-running-p)

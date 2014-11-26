@@ -52,6 +52,9 @@
 ;; maxframe
 (add-hook 'window-setup-hook 'maximize-frame t)
 
+;; projectile
+(setq projectile-enable-caching t)
+
 ;; helm
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0.1)

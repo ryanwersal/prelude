@@ -37,6 +37,12 @@
 (require 'prelude-xml)
 (require 'prelude-yaml)
 
+;; Configure default buffer settings
+(setq-default buffer-file-coding-system 'iso-latin-1-unix
+              tab-width 4
+              indent-tabs-mode t
+              fill-column 100)
+
 ;; whitespace-mode
 (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark trailing))
       whitespace-display-mappings

@@ -15,12 +15,6 @@
         (t "PragmataPro-10")))
 (add-to-list 'default-frame-alist `(font .,default-font-name))
 
-;; Configure default buffer settings
-(setq-default buffer-file-coding-system 'iso-latin-1-unix
-              tab-width 4
-              indent-tabs-mode t
-              fill-column 100)
-
 (delete-selection-mode t)
 (global-auto-revert-mode 1)
 

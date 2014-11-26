@@ -80,6 +80,11 @@
    `(flymake-warnline ((t (:underline ,base09 :background ,base01))))
    `(flymake-errline ((t (:underline ,base08 :background ,base01))))
 
+   ;; Flycheck
+   `(flycheck-info ((t (:underline ,base0B))))
+   `(flycheck-warning ((t (:underline ,base09))))
+   `(flycheck-error ((t (:underline ,base08))))
+
    ;; Clojure errors
    `(clojure-test-failure-face ((t (:background nil :inherit flymake-warnline))))
    `(clojure-test-error-face ((t (:background nil :inherit flymake-errline))))

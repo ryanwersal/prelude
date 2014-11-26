@@ -130,6 +130,9 @@
 (setq web-mode-engines-alist
       '(("razor" . "\\.cshtml\\'")))
 
+;; visual-regexp
+(global-set-key (kbd "C-x C-r") 'vr/query-replace)
+
 ;; Hooks
 (add-hook 'prog-mode-common-hook
           (lambda ()

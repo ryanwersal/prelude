@@ -72,19 +72,9 @@
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
 
-(defun open-fogbugz ()
-  (interactive)
-  (browse-url
-   (concat
-    "https://fogbugz.zuerchertech.com/default.asp?"
-    (url-hexify-string (if mark-active
-                           (buffer-substring (region-beginning) (region-end))
-                         (read-string "FogBugz #: "))))))
-
 ;; Setup some useful global keybinds
 (global-set-key (kbd "C-c C-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c e") 'eval-and-replace)
-(global-set-key (kbd "C-c C-f") 'open-fogbugz)
 (global-set-key (kbd "C-x i") 'imenu)
 (global-set-key (kbd "C-c i") 'indent-region)
 (global-set-key (kbd "C-c w") 'z-normalize-whitespace)

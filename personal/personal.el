@@ -14,6 +14,7 @@
                             json-mode
                             win-switch
                             ag
+                            helm-ag
                             highlight-symbol
                             dash
                             tagedit))
@@ -185,6 +186,10 @@
 (add-to-list 'auto-mode-alist '("\\.wsgi\\'" . python-mode))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; Additional prelude configs
+(prelude-install-search-engine "fogbugz" "https://fogbugz.zuerchertech.com/default.asp?" "FogBugz: ")
+(define-key prelude-mode-map (kbd "C-c f") 'prelude-fogbugz)
 
 ;; Start server
 (require 'server)

@@ -72,7 +72,7 @@
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
 
 ;; yasnippet
-(setq yas/snippet-dirs (personal-dir-path "snippets"))
+(setq yas-snippet-dirs (personal-dir-path "snippets"))
 (yas-global-mode t)
 (global-set-key (kbd "C-c y") 'helm-c-yas-complete)
 
@@ -134,6 +134,9 @@
 (global-set-key (kbd "C-x C-r") 'vr/query-replace)
 
 ;; Hooks
+(add-hook 'python-mode-hook
+		  (lambda ()
+			(setq indent-tabs-mode t)))
 (add-hook 'prog-mode-common-hook
           (lambda ()
             (subword-mode)

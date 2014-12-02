@@ -1,3 +1,45 @@
+(defun personal-dir-path (path)
+  "Return full path for path under the personal directory."
+  (concat (expand-file-name "~/.emacs.d/personal") "/" path))
+
+(defun highlight-fixme-tokens ()
+  "Highlight fixme tokens in comments."
+  (font-lock-add-keywords nil '(("\\<\\((IMPROVE|FIX|REMOVE)ME\\|TODO\\|BUG\\|NOTE\\|HACK\\)[:\(]" 1
+                                 font-lock-warning-face t))))
+
+(defun confirm-exit ()
+  "Prompt prior to exit."
+  (interactive)
+  (if (yes-or-no-p "Do you want to exit? ")
+      (save-buffers-kill-emacs)))
+(global-set-key (kbd "C-x C-c") 'confirm-exit)
+(global-unset-key (kbd "C-z")) ;; Nuke suspend key
+
+(defun z-normalize-newlines ()
+  "Clean up line endings."
+  (interactive)
+  (set-buffer-file-coding-system 'iso-latin-1-unix))
+
+(defun z-normalize-whitespace ()
+  "Clean up whitespace."
+  (interactive)
+  (let ((beg (region-beginning))
+        (end (region-end)))
+    (whitespace-cleanup-region beg end)
+    (cond (indent-tabs-mode (tabify beg end))
+          (t (untabify beg end)))))
+
+;; Setup some useful global keybinds
+(global-set-key (kbd "C-c C-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-x i") 'imenu)
+(global-set-key (kbd "C-c i") 'indent-region)
+(global-set-key (kbd "C-c w") 'z-normalize-whitespace)
+(global-set-key (kbd "C-c l") 'goto-line)
+
+;; Make help more helpful (and less intrusive).
+(global-set-key (kbd "C-c C-h") 'help-command)
+(global-set-key (kbd "C-c C-h a") 'apropos)
+
 ;; Install other packages
 (prelude-require-packages '(maxframe
                             yasnippet
@@ -17,7 +59,7 @@
                             helm-ag
                             highlight-symbol
                             dash
-                            tagedit))
+                            helm-dash))
 
 ;; Enable prelude modules
 (require 'prelude-helm)
@@ -99,6 +141,7 @@
 (setq-default highlight-symbol-idle-delay 0.7)
 
 ;; omnisharp
+(require 'omnisharp)
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-omnisharp))
 (setq-default omnisharp-server-executable-path "~/src/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
@@ -133,63 +176,78 @@
 ;; visual-regexp
 (global-set-key (kbd "C-x C-r") 'vr/query-replace)
 
+;; helm-dash
+(global-set-key (kbd "C-c C-h d") 'helm-dash)
+(global-set-key (kbd "C-c C-h g") 'helm-dash-at-point)
+(setq helm-dash-min-length 2
+      helm-dash-common-docsets '("PostgreSQL" "qt335" "Qt")
+      helm-dash-browser-func 'eww)
+
 ;; Hooks
-(add-hook 'python-mode-hook
-		  (lambda ()
-			(setq indent-tabs-mode t)))
 (add-hook 'prog-mode-common-hook
           (lambda ()
             (subword-mode)
             (higlight-fixme-tokens)
             (highlight-symbol-mode)))
+(add-hook 'cmake-mode-hook
+          (lambda ()
+            (setq helm-dash-docsets '("CMake"))))
 (add-hook 'css-mode-hook
           (lambda ()
             (subword-mode)
-            (highlight-fixme-tokens)))
+            (highlight-fixme-tokens)
+            (setq helm-dash-docsets '("CSS"))))
 (add-hook 'sgml-mode-hook
           (lambda ()
             (subword-mode)
             (zencoding-mode)
-            (tagedit-mode 1)
             (setq sgml-basic-offset 2)))
 (add-hook 'python-mode-hook
           (lambda ()
-            (setq tab-width 4
+            (setq indent-tabs-mode t
+                  tab-width 4
                   py-indent-offset 4
-                  python-indent 4)))
+                  python-indent-offset 4
+                  helm-dash-docsets '("Python_2"))))
 (add-hook 'html-mode-hook
           (lambda ()
             (setq tab-width 2
-                  indent-tabs-mode nil)))
+                  indent-tabs-mode nil
+                  helm-dash-docsets '("AngularJS" "Bootstrap 3" "Bootstrap_2" "Font_Awesome" "HTML"))))
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq js2-basic-offset 2
-                  indent-tabs-mode nil)))
+                  indent-tabs-mode nil
+                  helm-dash-docsets '("AngularJS" "Javascript" "Lo-Dash" "jQuery"))))
 (add-hook 'js-mode-hook
           (lambda ()
             (setq tab-width 2
-                  js-indent-level 2
                   indent-tabs-mode nil)))
 (add-hook 'coffee-mode-hook
           (lambda ()
             (setq tab-width 2
-                  coffee-tab-width 2
-                  indent-tab-mode nil)))
+                  indent-tabs-mode nil)))
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (paredit-mode 1)))
+            (setq helm-dash-docsets '("Clojure"))))
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
-            (paredit-mode 1)))
+            (setq tab-width 2
+                  indent-tabs-mode nil
+                  helm-dash-docsets '("Emacs Lisp"))))
 (add-hook 'less-css-mode-hook
           (lambda ()
             (setq tab-width 2
-                  less-css-indent-level 2
-                  css-indent-offset 2
                   indent-tabs-mode nil)))
 (add-hook 'csharp-mode-hook
           (lambda ()
             (omnisharp-mode)))
+(add-hook 'java-mode-hook
+          (lambda ()
+            (setq helm-dash-docsets '("Android" "Java"))))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (local-set-key (kbd "C-c C-o") 'ff-find-related-file)))
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.pr[oi]\\'" . shell-script-mode))

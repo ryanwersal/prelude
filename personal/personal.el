@@ -1,3 +1,42 @@
+;; Install other packages
+(prelude-require-packages '(maxframe
+                            yasnippet
+                            helm-c-yasnippet
+                            rainbow-delimiters
+                            csharp-mode
+                            omnisharp
+                            helm-swoop
+                            cmake-mode
+                            markdown-mode
+                            expand-region
+                            visual-regexp
+                            zencoding-mode
+                            json-mode
+                            win-switch
+                            ag
+                            helm-ag
+                            highlight-symbol
+                            dash
+                            helm-dash))
+
+;; Enable prelude modules
+(require 'prelude-helm)
+(require 'prelude-helm-everywhere)
+(require 'prelude-company)
+(require 'prelude-key-chord)
+(require 'prelude-c)
+(require 'prelude-clojure)
+(require 'prelude-coffee)
+(require 'prelude-css)
+(require 'prelude-emacs-lisp)
+(require 'prelude-js)
+(require 'prelude-org)
+(require 'prelude-python)
+(require 'prelude-shell)
+(require 'prelude-web)
+(require 'prelude-xml)
+(require 'prelude-yaml)
+
 (defun personal-dir-path (path)
   "Return full path for path under the personal directory."
   (concat (expand-file-name "~/.emacs.d/personal") "/" path))
@@ -39,45 +78,6 @@
 ;; Make help more helpful (and less intrusive).
 (global-set-key (kbd "C-c C-h") 'help-command)
 (global-set-key (kbd "C-c C-h a") 'apropos)
-
-;; Install other packages
-(prelude-require-packages '(maxframe
-                            yasnippet
-                            helm-c-yasnippet
-                            rainbow-delimiters
-                            csharp-mode
-                            omnisharp
-                            helm-swoop
-                            cmake-mode
-                            markdown-mode
-                            expand-region
-                            visual-regexp
-                            zencoding-mode
-                            json-mode
-                            win-switch
-                            ag
-                            helm-ag
-                            highlight-symbol
-                            dash
-                            helm-dash))
-
-;; Enable prelude modules
-(require 'prelude-helm)
-(require 'prelude-helm-everywhere)
-(require 'prelude-company)
-(require 'prelude-key-chord)
-(require 'prelude-c)
-(require 'prelude-clojure)
-(require 'prelude-coffee)
-(require 'prelude-css)
-(require 'prelude-emacs-lisp)
-(require 'prelude-js)
-(require 'prelude-org)
-(require 'prelude-python)
-(require 'prelude-shell)
-(require 'prelude-web)
-(require 'prelude-xml)
-(require 'prelude-yaml)
 
 ;; Configure default buffer settings
 (setq-default buffer-file-coding-system 'iso-latin-1-unix
@@ -222,10 +222,12 @@
 (add-hook 'js-mode-hook
           (lambda ()
             (setq tab-width 2
+                  js-indent-level 2
                   indent-tabs-mode nil)))
 (add-hook 'coffee-mode-hook
           (lambda ()
             (setq tab-width 2
+                  coffee-tab-width 2
                   indent-tabs-mode nil)))
 (add-hook 'clojure-mode-hook
           (lambda ()
@@ -238,6 +240,8 @@
 (add-hook 'less-css-mode-hook
           (lambda ()
             (setq tab-width 2
+                  less-css-indent-level 2
+                  css-indent-offset 2
                   indent-tabs-mode nil)))
 (add-hook 'csharp-mode-hook
           (lambda ()
@@ -259,6 +263,8 @@
 (add-to-list 'auto-mode-alist '("\\.wsgi\\'" . python-mode))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 
 ;; Additional prelude configs
 (prelude-install-search-engine "fogbugz" "https://fogbugz.zuerchertech.com/default.asp?" "FogBugz: ")

@@ -15,9 +15,6 @@
         (t "PragmataPro-10")))
 (add-to-list 'default-frame-alist `(font .,default-font-name))
 
-(delete-selection-mode t)
-(global-auto-revert-mode 1)
-
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)

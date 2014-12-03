@@ -183,6 +183,10 @@
       helm-dash-common-docsets '("PostgreSQL" "qt335" "Qt")
       helm-dash-browser-func 'eww)
 
+;; Personal Modules
+(add-to-list 'load-path (personal-dir-path "modules"))
+(require 'rw-ediff)
+
 ;; Hooks
 (add-hook 'prog-mode-common-hook
           (lambda ()

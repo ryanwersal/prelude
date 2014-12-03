@@ -41,11 +41,6 @@
   "Return full path for path under the personal directory."
   (concat (expand-file-name "~/.emacs.d/personal") "/" path))
 
-(defun highlight-fixme-tokens ()
-  "Highlight fixme tokens in comments."
-  (font-lock-add-keywords nil '(("\\<\\((IMPROVE|FIX|REMOVE)ME\\|TODO\\|BUG\\|NOTE\\|HACK\\)[:\(]" 1
-                                 font-lock-warning-face t))))
-
 (defun confirm-exit ()
   "Prompt prior to exit."
   (interactive)
@@ -84,6 +79,14 @@
               tab-width 4
               indent-tabs-mode t
               fill-column 100)
+
+;; c-mode
+(setq c-default-style
+      '((c-mode . "bsd")
+        (c++-mode . "bsd")
+        (java-mode . "java")
+        (other . "bsd")))
+(defvaralias 'c-basic-offset 'tab-width)
 
 ;; whitespace-mode
 (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark trailing))
@@ -191,7 +194,6 @@
 (add-hook 'prog-mode-common-hook
           (lambda ()
             (subword-mode)
-            (higlight-fixme-tokens)
             (highlight-symbol-mode)))
 (add-hook 'cmake-mode-hook
           (lambda ()
@@ -253,9 +255,6 @@
 (add-hook 'java-mode-hook
           (lambda ()
             (setq helm-dash-docsets '("Android" "Java"))))
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (local-set-key (kbd "C-c C-o") 'ff-find-related-file)))
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.pr[oi]\\'" . shell-script-mode))

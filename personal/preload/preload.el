@@ -20,3 +20,6 @@
 (setq visible-bell t)
 
 (set-default 'sentence-end-double-space nil) ;; Don't require double spaces after periods anywhere.
+
+(if is-windows-p
+    (add-hook 'window-setup-hook 'toggle-frame-fullscreen))

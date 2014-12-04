@@ -1,6 +1,5 @@
 ;; Install other packages
-(prelude-require-packages '(maxframe
-                            yasnippet
+(prelude-require-packages '(yasnippet
                             helm-c-yasnippet
                             rainbow-delimiters
                             csharp-mode
@@ -99,9 +98,6 @@
 
 ;; rainbow-delimiters
 (rainbow-delimiters-mode)
-
-;; maxframe
-(add-hook 'window-setup-hook 'maximize-frame t)
 
 ;; projectile
 (setq projectile-enable-caching t)

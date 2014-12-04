@@ -190,6 +190,7 @@
 (add-to-list 'load-path (personal-dir-path "modules"))
 (require 'rw-ediff)
 (require 'rw-key-chord)
+(require 'rw-smartparens)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook
@@ -202,7 +203,6 @@
 (add-hook 'css-mode-hook
           (lambda ()
             (subword-mode)
-            (highlight-fixme-tokens)
             (setq helm-dash-docsets '("CSS"))))
 (add-hook 'sgml-mode-hook
           (lambda ()

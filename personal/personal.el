@@ -99,9 +99,6 @@
 ;; rainbow-delimiters
 (rainbow-delimiters-mode)
 
-;; projectile
-(setq projectile-enable-caching t)
-
 ;; helm
 (setq helm-idle-delay 0.1
       helm-input-idle-delay 0.1)
@@ -187,6 +184,7 @@
 (require 'rw-ediff)
 (require 'rw-key-chord)
 (require 'rw-smartparens)
+(require 'rw-projectile)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

@@ -15,7 +15,6 @@
         (t "PragmataPro-10")))
 (add-to-list 'default-frame-alist `(font .,default-font-name))
 
-(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq visible-bell t)

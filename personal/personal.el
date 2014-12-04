@@ -189,6 +189,7 @@
 ;; Personal Modules
 (add-to-list 'load-path (personal-dir-path "modules"))
 (require 'rw-ediff)
+(require 'rw-key-chord)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook
@@ -255,6 +256,13 @@
 (add-hook 'java-mode-hook
           (lambda ()
             (setq helm-dash-docsets '("Android" "Java"))))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (setq tab-width 2
+                  indent-tabs-mode nil
+                  web-mode-markup-indent-offset 2
+                  web-mode-css-indent-offset 2
+                  web-mode-code-indent-offset 2)))
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.pr[oi]\\'" . shell-script-mode))

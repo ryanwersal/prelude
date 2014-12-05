@@ -36,6 +36,8 @@
 (require 'prelude-xml)
 (require 'prelude-yaml)
 
+(setq prelude-clean-whitespace-on-save nil)
+
 (defun personal-dir-path (path)
   "Return full path for path under the personal directory."
   (concat (expand-file-name "~/.emacs.d/personal") "/" path))

@@ -11,6 +11,9 @@
 (setq web-mode-engines-alist
       '(("razor" . "\\.cshtml\\'")))
 
+;; Undefine C-c C-h since it conflicts with the global help bind.
+(define-key web-mode-map (kbd "C-c C-h") nil)
+
 (provide 'rw-web-mode)
 
 ;;; rw-web-mode.el ends here

@@ -21,6 +21,11 @@
 (add-hook 'ediff-quit-hook 'ediff-restore-window-config 'append)
 (add-hook 'ediff-suspend-hook 'ediff-restore-window-config 'append)
 
+(eval-after-load "vc-hooks"
+  '(define-key vc-prefix-map "=" 'vc-ediff))
+(eval-after-load "vc-dir"
+  '(define-key vc-dir-mode-map "=" 'vc-ediff))
+
 (provide 'rw-ediff)
 
 ;;; rw-ediff.el ends here

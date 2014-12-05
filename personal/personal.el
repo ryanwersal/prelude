@@ -166,11 +166,6 @@
 ;; zencoding-mode
 (setq zencoding-indentation 2)
 
-;; web-mode
-(add-to-list 'auto-mode-alist '("\\.cshtml\\'" . web-mode))
-(setq web-mode-engines-alist
-      '(("razor" . "\\.cshtml\\'")))
-
 ;; visual-regexp
 (global-set-key (kbd "C-x C-r") 'vr/query-replace)
 
@@ -187,6 +182,7 @@
 (require 'rw-key-chord)
 (require 'rw-smartparens)
 (require 'rw-projectile)
+(require 'rw-web-mode)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

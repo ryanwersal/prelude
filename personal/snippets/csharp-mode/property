@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: property
+# key: property
+# --
+${1:public} ${2:TYPE} ${3:NAME} { get; set; }

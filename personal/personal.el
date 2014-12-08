@@ -101,12 +101,6 @@
 ;; rainbow-delimiters
 (rainbow-delimiters-mode)
 
-;; helm
-(setq helm-idle-delay 0.1
-      helm-input-idle-delay 0.1)
-(global-set-key (kbd "C-x C-f") 'helm-for-files)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-
 ;; helm-swoop
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
@@ -183,6 +177,7 @@
 (require 'rw-smartparens)
 (require 'rw-projectile)
 (require 'rw-web-mode)
+(require 'rw-helm)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

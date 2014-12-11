@@ -2,4 +2,4 @@
 # name: property
 # key: property
 # --
-${1:public} ${2:TYPE} ${3:NAME} { get; set; }
+public ${1:TYPE} ${2:NAME} { get; set; }

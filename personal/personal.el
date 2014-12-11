@@ -178,6 +178,7 @@
 (require 'rw-projectile)
 (require 'rw-web-mode)
 (require 'rw-helm)
+(require 'rw-org)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

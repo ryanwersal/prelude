@@ -184,6 +184,7 @@
 (require 'rw-web-mode)
 (require 'rw-helm)
 (require 'rw-org)
+(require 'rw-emms)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

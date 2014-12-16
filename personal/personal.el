@@ -170,6 +170,11 @@
       helm-dash-common-docsets '("PostgreSQL" "qt335" "Qt")
       helm-dash-browser-func 'eww)
 
+;; Other thirdparty libs
+(add-to-list 'load-path (personal-dir-path "vendor"))
+(require 'winring)
+(winring-initialize)
+
 ;; Personal Modules
 (add-to-list 'load-path (personal-dir-path "modules"))
 (require 'rw-ediff)

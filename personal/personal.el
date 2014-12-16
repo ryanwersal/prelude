@@ -256,6 +256,9 @@
                   web-mode-markup-indent-offset 2
                   web-mode-css-indent-offset 2
                   web-mode-code-indent-offset 2)))
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.pr[oi]\\'" . shell-script-mode))

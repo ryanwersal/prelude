@@ -16,7 +16,8 @@
                             helm-ag
                             highlight-symbol
                             dash
-                            helm-dash))
+                            helm-dash
+                            soundcloud))
 
 ;; Enable prelude modules
 (require 'prelude-helm)

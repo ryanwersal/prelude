@@ -15,4 +15,6 @@
 				".rm" ".rmvb" ".mp4" ".flac" ".vob" ".m4a" ".flv" ".ogv" ".pls"))
   "vlc")
 
+(provide 'rw-emms)
+
 ;;; rw-emms.el ends here

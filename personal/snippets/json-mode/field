@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: field
+# key: field
+# --
+{
+  "type": "text",
+  "font": "${1:font}",
+  "at": [${2:x}, ${3:y}],
+  "width": ${4:w},
+  "align": "${5:left}",
+  "tag": "${6:field tag}"
+}

@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: label
+# key: label
+# --
+{
+  "type": "text",
+  "font": "${1:font}",
+  "at": [${2:x}, ${3:y}],
+  "width": ${4:w},
+  "align": "${5:left}",
+  "value": "${6:value}"
+}

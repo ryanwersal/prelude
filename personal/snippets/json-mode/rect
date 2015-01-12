@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: rect
+# key: rect
+# --
+{
+  "type": "rectangle",
+  "color": "black",
+  "dimensions": [${1:x}, ${2:y}, ${3:w}, ${4:h}]
+}

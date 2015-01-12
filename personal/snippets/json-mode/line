@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: line
+# key: line
+# --
+{
+  "type": "line",
+  "from": [${1:x}, ${2:y}],
+  "length": ${3:len},
+  "orientation": "${4:horizontal}",
+  "size": ${5:0.4}
+}

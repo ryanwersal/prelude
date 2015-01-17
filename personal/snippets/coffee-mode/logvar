@@ -2,4 +2,4 @@
 # name: logvar
 # key: logvar
 # --
-console.log '${1}: ', ${1:var} 
+console.log '$1: ', ${1:var}

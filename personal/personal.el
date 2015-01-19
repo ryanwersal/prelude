@@ -187,6 +187,7 @@
 (require 'rw-helm)
 (require 'rw-org)
 (require 'rw-emms)
+(require 'rw-minibuffer)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

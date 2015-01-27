@@ -283,7 +283,10 @@
 
 (setq-default
  frame-title-format
- '(("Emacs"))
+ '((:eval
+    (concat
+     (projectile-project-name)
+     " - Emacs")))
 
  header-line-format
  '((:eval

@@ -16,8 +16,9 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/Dropbox/org/gtd.org") "* TODO: %?\n%U")
-              ("c" "code note" entry (file "~/Dropbox/org/gtd.org") "* CODE: %?\n%U\n%a"))))
+      (quote (("t" "todo" entry (file "~/Dropbox/org/gtd.org") "* TODO: %?\n%U\n")
+              ("c" "code note" entry (file "~/Dropbox/org/gtd.org") "* CODE: %?\n%U\n%a\n")
+              ("p" "paste" entry (file "~/Dropbox/org/gtd.org") "* PASTE: %?\n%U\n%x\n"))))
 
 ;; Add support for adding links to man pages
 (org-add-link-type "man" 'org-man-open)

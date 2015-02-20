@@ -171,6 +171,9 @@
       helm-dash-common-docsets '("PostgreSQL" "qt335" "Qt")
       helm-dash-browser-func 'eww)
 
+;; browse-url configuration
+(setq browse-url-browser-function 'browse-url-chromium)
+
 ;; Personal Modules
 (add-to-list 'load-path (personal-dir-path "modules"))
 (require 'rw-ediff)

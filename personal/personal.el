@@ -17,7 +17,8 @@
                             highlight-symbol
                             dash
                             helm-dash
-                            soundcloud))
+                            soundcloud
+                            multiple-cursors))
 
 ;; Enable prelude modules
 (require 'prelude-helm)
@@ -173,6 +174,10 @@
 
 ;; browse-url configuration
 (setq browse-url-browser-function 'browse-url-chromium)
+
+;; multiple-cursors
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 
 ;; Personal Modules
 (add-to-list 'load-path (personal-dir-path "modules"))

@@ -280,6 +280,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 ;; Additional prelude configs
 (prelude-install-search-engine "fogbugz" "https://fogbugz.zuerchertech.com/default.asp?" "FogBugz: ")
 (define-key prelude-mode-map (kbd "C-c f") 'prelude-fogbugz)

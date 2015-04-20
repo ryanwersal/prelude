@@ -68,8 +68,6 @@
 
 ;; Setup some useful global keybinds
 (global-set-key (kbd "C-c C-/") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-x i") 'imenu)
-(global-set-key (kbd "C-c i") 'indent-region)
 (global-set-key (kbd "C-c w") 'z-normalize-whitespace)
 (global-set-key (kbd "C-c l") 'goto-line)
 

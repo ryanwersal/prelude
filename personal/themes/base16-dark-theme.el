@@ -115,7 +115,7 @@
    `(company-preview-common ((t (:inherit company-tooltip-common))))
 
    ;; helm
-   `(helm-M-x-key ((t (:foreground ,base09))))
+   `(helm-M-x-key ((t (:foreground ,base0E))))
    `(helm-action ((t (:foreground ,base06 :underline t))))
    `(helm-bookmark-addressbook ((t (:foreground ,base08))))
    `(helm-bookmark-directory ((t (:foreground ,base0E))))
@@ -142,20 +142,20 @@
    `(helm-grep-lineno ((t (:foreground ,base09))))
    `(helm-grep-match ((t (:foreground ,base0A))))
    `(helm-grep-running ((t (:foreground ,base08))))
-   `(helm-header ((t (:foreground ,base0C))))
+   `(helm-header ((t (:foreground ,base0B))))
    `(helm-helper ((t (:foreground ,base0C))))
    `(helm-history-deleted ((t (:foreground ,base00 :background ,base08))))
    `(helm-history-remote ((t (:foreground ,base08))))
    `(helm-lisp-completion-info ((t (:foreground ,base09))))
    `(helm-lisp-show-completion ((t (:foreground ,base08))))
    `(helm-locate-finish ((t (:foreground ,base06 :background ,base0C))))
-   `(helm-match ((t (:foreground ,base0D))))
+   `(helm-match ((t (:foreground ,base09))))
    `(helm-moccur-buffer ((t (:foreground ,base0C :underline t))))
    `(helm-prefarg ((t (:foreground ,base0C))))
-   `(helm-selection ((t (:foreground ,base07 :background ,base02))))
+   `(helm-selection ((t (:foreground ,base0C :background ,base01))))
    `(helm-selection-line ((t (:foreground ,base06 :background ,base01))))
    `(helm-separator ((t (:foreground ,base08))))
-   `(helm-source-header ((t (:foreground ,base06))))
+   `(helm-source-header ((t (:foreground ,base0D :underline t))))
    `(helm-visible-mark ((t (:foreground ,base00 :background ,base05))))
 
    ;; org-mode

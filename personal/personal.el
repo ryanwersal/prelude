@@ -38,7 +38,8 @@
 (require 'prelude-xml)
 (require 'prelude-yaml)
 
-(setq prelude-clean-whitespace-on-save nil)
+(setq prelude-clean-whitespace-on-save nil
+      prelude-auto-save nil)
 
 (defun personal-dir-path (path)
   "Return full path for path under the personal directory."

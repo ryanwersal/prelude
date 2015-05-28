@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: connectzdt
+# key: connectzdt
+# --
+connect(${1:zdt}, SIGNAL(valueChanged(const QDateTime&)), this, SLOT({2:_requery()}));

@@ -7,5 +7,6 @@ rpt.add_item(std_break())
 
 t = SqlTable("%s %s %s" % (env["sql"], env["order_by"], env["limit"]))
 $0
+t.add_col("", "", None)
 
 rpt.add_item(t)

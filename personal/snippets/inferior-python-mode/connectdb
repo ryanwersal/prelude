@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: connectdb
+# key: connectdb
+# --
+db_args = db.parse_connection_args(host="$1", database="$2", user="$3"); db.psycopgconnect(**db_args)

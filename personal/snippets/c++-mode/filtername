@@ -1,0 +1,18 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: filtername
+# key: filtername
+# --
+QString ${1:name} = ${2:zle}->text().lower();
+_temp_${3:type}_names.clear();
+if (!$1.isEmpty())
+{
+	QStringList name_types = QStringList() << ${4:"people" << "businesses"};
+	_temp_$3_names = python::runOnServer(
+		"names.search", "search_for_name_temp_table_info", zt::List() << $1 << QVariant(name_types)).toList();
+
+	${5:where_parts} << QString(
+		"current_namesid($0) IN ( "
+		"  SELECT namesid FROM temp_$3_names) ");
+
+	temp_table_info << "temp_$3_names" << "namesid BIGINT NOT NULL" << _temp_$3_names;
+}

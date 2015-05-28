@@ -2,4 +2,4 @@
 # name: connectzdt
 # key: connectzdt
 # --
-connect(${1:zdt}, SIGNAL(valueChanged(const QDateTime&)), this, SLOT({2:_requery()}));
+connect(${1:zdt}, SIGNAL(valueChanged(const QDateTime&)), this, SLOT(${2:_requery()}));

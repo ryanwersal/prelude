@@ -7,9 +7,9 @@
 ;;; Code:
 
 (require 'key-chord)
-;; key-chord-unset-global seems to have a bug so undefine it instead.
-(key-chord-define-global "uu" 'nil)
-(key-chord-define-global "xx" 'nil)
+
+(setq key-chord-one-key-delay 0.12
+      key-chord-two-keys-delay 0.05)
 
 (provide 'rw-key-chord)
 

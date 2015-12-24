@@ -188,6 +188,7 @@
 (require 'rw-projectile)
 (require 'rw-web-mode)
 (require 'rw-helm)
+(require 'rw-helm-ag)
 (require 'rw-org)
 (require 'rw-emms)
 (require 'rw-minibuffer)

@@ -192,6 +192,7 @@
 (require 'rw-org)
 (require 'rw-emms)
 (require 'rw-minibuffer)
+(require 'rw-beacon)
 
 ;; Hooks
 (add-hook 'prog-mode-common-hook

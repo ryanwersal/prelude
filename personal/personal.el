@@ -19,7 +19,8 @@
                             helm-dash
                             soundcloud
                             multiple-cursors
-                            clj-refactor))
+                            clj-refactor
+                            dsvn))
 
 ;; Enable prelude modules
 (require 'prelude-helm)

@@ -1,8 +1,8 @@
-;;; rw-vc.el --- vc-mode/-dir configuration
+;;; rw-vc.el --- vc-mode/-dir/dsvn configuration
 
 ;;; Commentary:
 
-;;; vc-mode/-dir configuration
+;;; vc-mode/-dir/dsvn configuration
 
 ;;; Code:
 
@@ -11,6 +11,8 @@
             (vc-dir-hide-state 'needs-update)
             (vc-dir-hide-state 'unregistered)
             (vc-dir-hide-state 'ignored)))
+
+(require 'dsvn)
 
 (provide 'rw-vc)
 

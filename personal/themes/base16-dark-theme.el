@@ -517,6 +517,9 @@
    `(zmonitor-warn-face ((t (:foreground ,base09))))
    `(zmonitor-error-face ((t (:foreground ,base08))))
    `(zmonitor-critical-face ((t (:foreground ,base0E))))
+
+   ;; dsvn
+   `(svn-mark-face ((t (:background ,base08))))
    )
 
   (custom-theme-set-variables

@@ -14,6 +14,9 @@
 
 (require 'dsvn)
 
+;; disable extra commit message templating
+(setq log-edit-hook '(log-edit-show-files))
+
 (provide 'rw-vc)
 
 ;;; rw-vc.el ends here

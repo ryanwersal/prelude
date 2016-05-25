@@ -82,7 +82,7 @@
 (setq-default buffer-file-coding-system 'iso-latin-1-unix
               tab-width 4
               indent-tabs-mode t
-              fill-column 100)
+              fill-column 120)
 
 ;; c-mode
 (setq c-default-style

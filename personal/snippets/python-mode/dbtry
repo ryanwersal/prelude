@@ -8,6 +8,5 @@ try:
 	db.commit()
 except Exception, e:
 	db.rollback()
-	print zutil.get_stack_string()
-	print e
+	ox.traceback()
 	raise

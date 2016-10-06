@@ -139,7 +139,7 @@
 (require 'omnisharp)
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-omnisharp))
-(setq-default omnisharp-server-executable-path "~/src/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
+(setq-default omnisharp-server-executable-path "~/src/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe")
 
 ;; company
 (defun is-unneeded-company-backend? (backend)
